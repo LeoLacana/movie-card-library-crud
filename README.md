@@ -97,8 +97,8 @@ Outra diferença importante neste projeto em relação aos anteriores é que os 
 
 ## Data de entrega
 
-  - Serão `X` dias de projeto.
-  - Data de entrega para avaliação final do projeto: `DD/MM/YYYY - 14:00h`.
+  - Serão `2` dias de projeto.
+  - Data de entrega para avaliação final do projeto: `16/06/2021 - 14:00h`.
 
 ---
 
@@ -107,7 +107,7 @@ Outra diferença importante neste projeto em relação aos anteriores é que os 
 ## Antes de começar a desenvolver
 
 1. Clone o repositório
-  * `git clone https://github.com/tryber/sd-011-project-movie-card-library-crud.git`.
+  * `git clone git@github.com:tryber/sd-011-project-movie-card-library-crud.git.`
   * Entre na pasta do repositório que você acabou de clonar:
     * `cd sd-011-project-movie-card-library-crud`
 
@@ -280,9 +280,9 @@ Você deve utilizar um `BrowserRouter` pra criar as rotas da sua aplicação. As
 
 - Será validado se a rota `/` renderiza a página MovieList
 
-- Será validado se a rota `/movies/:id` renderiza a página MovieDetails
-
 - Será validado se a rota `/movies/new` renderiza a página NewMovie
+
+- Será validado se a rota `/movies/:id` renderiza a página MovieDetails
 
 - Será validado se a rota `/movies/:id/edit` renderiza a página EditMovie
 
