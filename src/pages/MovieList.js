@@ -17,7 +17,10 @@ class MovieList extends Component {
 
   componentDidMount() {
     movieAPI.getMovies()
-      .then((movie) => this.setState({ movies: movie, loading: false }));
+      .then((movie) => this.setState({
+        movies: movie,
+        loading: false,
+      }));
   }
 
   render() {
