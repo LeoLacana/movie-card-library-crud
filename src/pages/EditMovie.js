@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router';
 
 import { MovieForm } from '../components';
 import Loading from '../components/Loading';
@@ -9,11 +10,12 @@ class EditMovie extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      status: 'loading',
       shouldRedirect: false,
-      movie: null,
+      status: 'loading',
+      movie: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.fetchMovie = this.fetchMovie.bind(this);
   }
 
   componentDidMount() {
@@ -29,17 +31,17 @@ class EditMovie extends Component {
   }
 
   async fetchMovie(id) {
-    const movie = await movieAPI.getMovie(id);
+    const movieFetch = await movieAPI.getMovie(id);
     this.setState({
-      movie,
-      status: 'done',
+      status: '',
+      movie: movieFetch,
     });
   }
 
   render() {
     const { status, shouldRedirect, movie } = this.state;
-    if (shouldRedirect) {
-      // Redirect
+    if (shouldRedirect === true) {
+      return <Redirect to="/" />;
     }
 
     if (status === 'loading') {
@@ -48,21 +50,14 @@ class EditMovie extends Component {
 
     return (
       <div data-testid="edit-movie">
-        <MovieForm movie={ movie } onSubmit={ this.handleSubmit(movie) } />
+        <MovieForm movie={ movie } onSubmit={ this.handleSubmit } />
       </div>
     );
   }
 }
 
 EditMovie.propTypes = {
-  match: PropTypes.shape({
-    isExact: PropTypes.bool,
-    params: PropTypes.shape({
-      id: PropTypes.string,
-    }),
-    path: PropTypes.string,
-    url: PropTypes.string,
-  }).isRequired,
-};
+  id: PropTypes.string,
+}.isRequired;
 
 export default EditMovie;
