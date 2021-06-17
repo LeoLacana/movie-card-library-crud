@@ -21,10 +21,9 @@ class EditMovie extends Component {
     this.fetchMovie(match.params.id);
   }
 
-  handleSubmit(updatedMovie) {
-    movieAPI.updateMovie(updatedMovie);
+  async handleSubmit(updatedMovie) {
+    await movieAPI.updateMovie(updatedMovie);
     this.setState({
-      status: 'loading',
       shouldRedirect: true,
     });
   }
