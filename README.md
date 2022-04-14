@@ -8,12 +8,10 @@ Realizado as seguintes operações nesse projeto:
   - Editar um filme da lista - **UPDATE**;
   - E apagar um filme da lista - **DELETE**;
 
-# Habilidades
+# Habilidades Utilizadas
 
-Nesse projeto, você será capaz de:
-
-- Utilizar o componentDidMount para executar uma ação após o componente ser inserido no DOM;
-- Utilizar o shouldComponentUpdate para avaliar se uma atualização do componente deve ou não acontecer naquele momento;
+- ComponentDidMount para executar uma ação após o componente ser inserido no DOM;
+- ShouldComponentUpdate para avaliar se uma atualização do componente deve ou não acontecer naquele momento;
 - Utilizar o componentDidUpdate para executar uma ação após o componente ser atualizado;
 - Utilizar o componentWillUnmount para realizar uma ação antes de o componente ser desmontado;
 - Utilizar o props.children para acessar os filhos de um componente React e interagir com eles;
